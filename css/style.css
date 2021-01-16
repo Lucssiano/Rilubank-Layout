@@ -14,10 +14,21 @@ body {
   background-image: linear-gradient(to bottom, #dfe9f3 0%, white 100%);
   background-attachment: fixed;
 }
+/* Si se hace repetitivo los colores voy a declarar esas variables */
+/* :root {
+  --primary-color: #c22b2b;
+  --full-black: #000;
+  --full-white: #fff;
+  --border-color: #ccc;
+} */
 
 /* Globales */
+/* Por ahora creo que estan al dope los h1 */
 h1 {
   font-size: 2.8rem;
+}
+h2 {
+  font-size: 2.4rem;
 }
 img {
   max-width: 100%;
@@ -27,11 +38,11 @@ a {
   font-family: "Poppins", sans-serif;
   font-size: 1.8rem;
 }
-/* .general-container {
-  width: 95%;
+.general-container {
+  width: 100%;
   max-width: 120rem;
   margin: 0 auto;
-} */
+}
 .li-header {
   list-style: none;
 }
@@ -41,31 +52,38 @@ ul {
 }
 p {
   font-size: 1.6rem;
-  padding: 2rem;
 }
 
 /* Utilidades */
 .bolder {
   font-weight: 700;
 }
+.to-uppercase {
+  text-transform: uppercase;
+}
 
 /* Header */
+/* Varias maneras de hacer el header , ver cual es la más conveniente*/
 .main-header {
   padding: 2rem 0 2rem 2rem;
   width: 100%;
-  /* background-image: linear-gradient(to bottom, #dfe9f3 0%, white 100%);
+  background-image: linear-gradient(to bottom, #dfe9f3 0%, white 100%);
   background-attachment: fixed;
   position: fixed;
-  box-shadow: 2px 7px 7px -2px rgba(0, 0, 0, 0.35); */
+  box-shadow: 2px 7px 7px -2px rgba(0, 0, 0, 0.35);
 }
 .header-container {
   display: flex;
   text-align: center;
 }
 @media (min-width: 768px) {
+  .main-header {
+    position: static;
+    box-shadow: none;
+  }
   .header-container {
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
   }
 }
 .logo-png {
@@ -94,16 +112,22 @@ i.menu-button {
 
 /* Navegación */
 .ul-list {
-  display: none;
+  /* display: none; */
   background-image: linear-gradient(to bottom, #dfe9f3 0%, white 100%);
   background-attachment: fixed;
   position: absolute;
   top: 8rem;
-  left: 0;
+  right: -79rem;
   width: 100%;
   flex-direction: column;
   align-items: center;
-  /* transition: display 2s ease-in; */
+  /* Si se quiere que la transición sea mejor se debería poner en distintos media queries */
+  transition: all 0.35s linear;
+}
+/* Clase para la transición del nav en mobile */
+.active {
+  right: 0;
+  /* display: flex; */
 }
 @media (min-width: 768px) {
   .ul-list {
@@ -120,12 +144,11 @@ i.menu-button {
   padding: 2rem;
 }
 .li-header:nth-child(5) {
-  -webkit-box-shadow: 2px 7px 7px -2px rgba(0, 0, 0, 0.35);
+  /* -webkit-box-shadow: 2px 7px 7px -2px rgba(0, 0, 0, 0.35); */ /* Para navegadores viejos */
   box-shadow: 2px 7px 7px -2px rgba(0, 0, 0, 0.35);
 }
 @media (min-width: 768px) {
   .li-header {
-    /* padding: 0 0.5rem; */
     padding: 0 1.5rem;
     border-top: none;
   }
@@ -134,7 +157,7 @@ i.menu-button {
   }
 }
 .li-header a {
-  /* display: block;  */ /* Para que se expanda el enlace  */
+  /* display: block;  */ /* Para que se expanda el enlace , porque no se como impedir que toque en la caja contenedora de las listas con js */
   color: #c22b2b;
 }
 .li-header a:hover {
@@ -150,23 +173,28 @@ i.menu-button {
     color: #c22b2b;
   }
 }
-.burger-action {
+/* .burger-action {
   display: flex;
-}
+} */
 
 /* Contenido principal */
 .main-content-header {
   display: flex;
   flex-flow: column wrap;
   text-align: center;
+  padding-top: 10rem;
 }
+.main-text p {
+  padding: 2rem;
+} 
 @media (min-width: 768px) {
   .main-content-header {
     flex-flow: row-reverse nowrap;
     justify-content: space-around;
     align-items: center;
+    padding-top: 0;
   }
-  /* Puesto para que se puedan agrupar al costado */
+  /* Puesto para que se puedan agrupar al costado en escritorio */
   .main-text {
     flex: 0 0 calc(36% - 0.5rem);
   }
@@ -182,26 +210,74 @@ i.menu-button {
   }
 }
 .main-content-header h1 {
-  margin-bottom: 0;
+  font-size: 4.5rem;
+  margin: 0;
   padding: 0 1rem;
 }
 
-/* Flecha para subir al header */
-/* Fijarse como hacer que aparezca despues que no se vea el header */
-.arrow-container {
-  opacity: 0.8;
-  position: fixed;
-  bottom: 3rem;
-  right: 3rem; 
-  border-radius: 50%;
-  border: 1px solid #000;
-  background-color: #c22b2b;
+
+/* "Publicidad y marketing" */
+/* .publicity-marketing {
+  font-weight: 400;
+} */
+.publicity-marketing .grid-boxes-container {
+  display: block;
 }
-.arrow-container:hover {
-  opacity: 1;
+@media (min-width: 720px) {
+  .publicity-marketing .grid-boxes-container {
+    text-align: center;
+  }
+}
+@media (min-width: 1000px) {
+  .publicity-marketing .grid-boxes-container {
+    display: grid;
+    grid-template-columns: repeat(3,32.9rem);
+    column-gap: 2rem;
+    justify-content: center;
+  }
+}
+@media (min-width: 1200px) {
+  .publicity-marketing .grid-boxes-container {
+    grid-template-columns: repeat(3,35rem);
+  }
+}
+.publicity-marketing .grid-boxes-container .grid-box {
   background-color: #fff;
+  margin: 2rem 1.5rem;
+  box-shadow: 2px 7px 7px -2px rgba(0, 0, 0, 0.35);
+  padding: 3rem 2.5rem;
+  border-radius: 1rem;
 }
-.arrow-container i.arrow-icon {
-  color: #000;
-  font-size: 5rem;
+.publicity-marketing .grid-boxes-container .grid-box i.grid-box-icon {
+  font-size: 4rem;
+  color: #c22b2b;
+}
+.publicity-marketing h2 , .publicity-marketing p  {
+  margin: 1rem 0 0 0;
+}
+
+/* Flecha para subir al header */
+/* Fijarse como hacer que aparezca despues que no se vea el header  */
+.arrow-container {
+  display: none;
+}
+@media (min-width: 768px) {
+  .arrow-container {
+    display: block;
+    opacity: 0.8;
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    border-radius: 50%;
+    border: 1px solid #000;
+    background-color: #c22b2b;
+  }
+  .arrow-container:hover {
+    opacity: 1;
+    background-color: #fff;
+  }
+  .arrow-container i.arrow-icon {
+    color: #000;
+    font-size: 5rem;
+  }
 }
