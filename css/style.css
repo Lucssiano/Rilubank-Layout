@@ -13,6 +13,7 @@ body {
   font-size: 1.6rem;
   background-image: linear-gradient(to bottom, #dfe9f3 0%, white 100%);
   background-attachment: fixed;
+  text-align: center;
 }
 /* Si se hace repetitivo los colores voy a declarar esas variables */
 /* :root {
@@ -23,7 +24,13 @@ body {
 } */
 
 /* Globales */
-/* Por ahora creo que estan al dope los h1 */
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+/* Por ahora creo que estan al dope los h separados */
 h1 {
   font-size: 2.8rem;
 }
@@ -32,6 +39,7 @@ h2 {
 }
 img {
   max-width: 100%;
+  max-height: 31rem;
 }
 a {
   text-decoration: none;
@@ -43,7 +51,7 @@ a {
   max-width: 120rem;
   margin: 0 auto;
 }
-.li-header {
+li {
   list-style: none;
 }
 ul {
@@ -52,6 +60,7 @@ ul {
 }
 p {
   font-size: 1.6rem;
+  margin: 0;
 }
 
 /* Utilidades */
@@ -74,16 +83,17 @@ p {
 }
 .header-container {
   display: flex;
-  text-align: center;
 }
 @media (min-width: 768px) {
   .main-header {
-    position: static;
-    box-shadow: none;
+    max-width: 135rem;
+    /* Por si no uso el header sticky */
+    /* position: static;
+    box-shadow: none; */
   }
   .header-container {
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
   }
 }
 .logo-png {
@@ -181,18 +191,18 @@ i.menu-button {
 .main-content-header {
   display: flex;
   flex-flow: column wrap;
-  text-align: center;
   padding-top: 10rem;
 }
 .main-text p {
   padding: 2rem;
-} 
+}
 @media (min-width: 768px) {
   .main-content-header {
     flex-flow: row-reverse nowrap;
     justify-content: space-around;
     align-items: center;
-    padding-top: 0;
+    /* Para separarlo del header sticky */
+    padding-top: 12rem;
   }
   /* Puesto para que se puedan agrupar al costado en escritorio */
   .main-text {
@@ -215,36 +225,28 @@ i.menu-button {
   padding: 0 1rem;
 }
 
-
-/* "Publicidad y marketing" */
-/* .publicity-marketing {
-  font-weight: 400;
-} */
+/* "Publicidad y marketing" Cajas descriptivas  */
 .publicity-marketing .grid-boxes-container {
   display: block;
 }
-@media (min-width: 720px) {
-  .publicity-marketing .grid-boxes-container {
-    text-align: center;
-  }
-}
-@media (min-width: 1000px) {
+@media (min-width: 1020px) {
   .publicity-marketing .grid-boxes-container {
     display: grid;
-    grid-template-columns: repeat(3,32.9rem);
+    grid-template-columns: repeat(3, 32.9rem);
     column-gap: 2rem;
     justify-content: center;
   }
 }
 @media (min-width: 1200px) {
   .publicity-marketing .grid-boxes-container {
-    grid-template-columns: repeat(3,35rem);
+    grid-template-columns: repeat(3, 35rem);
   }
 }
 .publicity-marketing .grid-boxes-container .grid-box {
   background-color: #fff;
   margin: 2rem 1.5rem;
-  box-shadow: 2px 7px 7px -2px rgba(0, 0, 0, 0.35);
+  /* box-shadow: 2px 7px 7px -2px rgba(0, 0, 0, 0.35); */ /* Sombra más tranki */
+  box-shadow: 3px 7px 20px 0px rgba(0, 0, 0, 0.75);
   padding: 3rem 2.5rem;
   border-radius: 1rem;
 }
@@ -252,13 +254,93 @@ i.menu-button {
   font-size: 4rem;
   color: #c22b2b;
 }
-.publicity-marketing h2 , .publicity-marketing p  {
+.publicity-marketing h2,
+.publicity-marketing p {
   margin: 1rem 0 0 0;
+}
+
+/* Seguridad del banco */
+.security-side {
+  margin: 5rem auto 0 auto;
+}
+/* Flex para pantallas de más de 920px */
+@media (min-width: 920px) {
+  .security-container {
+    display: flex;
+    flex: 0 0 calc(100% - 3rem);
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+  .main-security-text {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 5rem;
+  }
+}
+.security-side h2 {
+  font-size: 3rem;
+  letter-spacing: 0.1rem;
+  margin-bottom: 2rem;
+  padding: 0 2rem;
+}
+.security-side .main-security-text img {
+  width: 80%;
+}
+@media (min-width: 920px) {
+  .security-side .main-security-text img {
+    margin-left: 5rem;
+  }
+}
+.security-side .main-security-text p {
+  padding: 1.5rem 2rem;
+  line-height: 2.5rem;
+  font-weight: 500;
+}
+.security-info-ul {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2.5rem;
+  padding: 0 2rem;
+}
+/* Que se vaya centrando el ul, no se me ocurre otra manera */
+@media (min-width: 460px) {
+  .security-info-ul {
+    padding-left: 5rem;
+  }
+}
+@media (min-width: 650px) {
+  .security-info-ul {
+    padding-left: 8rem;
+  }
+}
+@media (min-width: 920px) {
+  .security-info-ul {
+    padding-left: 0;
+  }
+}
+.security-info-li {
+  display: flex;
+  /* align-items: space-evenly; */
+  padding: 0 2rem 2rem 2rem;
+}
+.security-info-li i.security-icon {
+  font-size: 3rem;
+  color: #c22b2b;
+}
+.list-text {
+  text-align: left;
+}
+.list-text h3 {
+  margin-left: 2rem;
+  padding-top: 0.5rem;
+}
+.list-text p {
+  padding: 1rem 0 0 2rem;
 }
 
 /* Flecha para subir al header */
 /* Fijarse como hacer que aparezca despues que no se vea el header  */
-.arrow-container {
+/* .arrow-container {
   display: none;
 }
 @media (min-width: 768px) {
@@ -280,4 +362,4 @@ i.menu-button {
     color: #000;
     font-size: 5rem;
   }
-}
+} */
