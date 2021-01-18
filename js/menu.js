@@ -9,7 +9,7 @@ const header = document.querySelector(".main-header");
 // Contenedor del header
 const headerContainer = document.querySelector(".header-container");
 // Listas del nav
-const listNav = document.querySelector(".li-header"); // Solo toma la primer lista, las otras no (?)
+// const listNav = document.querySelector(".li-header"); // Solo toma la primer lista, las otras no (?)
 
 /* ### FUNCIONES ### */
 
@@ -31,13 +31,7 @@ function escPushed() {
 
 // Si se presiona en alguna parte que no sea el header se cierra el menú de navegación en mobile
 window.addEventListener("click", (e) => {
-  if (
-    nav.classList.contains("active") &&
-    e.target !== header &&
-    e.target !== headerContainer &&
-    e.target !== listNav &&
-    e.target !== burger
-  ) {
+  if (nav.classList.contains("active") && e.target !== header && e.target !== headerContainer && e.target !== burger) {
     // nav.classList.remove("burger-action");
     nav.classList.remove("active");
   }

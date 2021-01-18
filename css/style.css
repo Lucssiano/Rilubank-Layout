@@ -166,7 +166,7 @@ i.menu-button {
   }
 }
 .li-header a {
-  /* display: block;  */ /* Para que se expanda el enlace , porque no se como impedir que toque en la caja contenedora de las listas con js */
+  display: block;  /* Para que se expanda el enlace , porque no se como impedir que toque en la caja contenedora de las listas con js */
   color: var(--primary-color);
 }
 .li-header a:hover {
