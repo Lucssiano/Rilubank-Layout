@@ -48,7 +48,7 @@ a {
 }
 .general-container {
   width: 100%;
-  max-width: 120rem;
+  max-width: 192rem;
   margin: 0 auto;
 }
 li {
@@ -98,6 +98,11 @@ i {
   .header-container {
     align-items: center;
     justify-content: space-around;
+  }
+}
+@media (min-width: 1350px) {
+  .main-header {
+    max-width: 192rem;
   }
 }
 .logo-png {
@@ -157,7 +162,7 @@ i.menu-button {
   padding: 2rem;
 }
 .li-header:nth-child(5) {
-  /* -webkit-box-shadow: 2px 7px 7px -2px rgba(0, 0, 0, 0.35); */ /* Para navegadores viejos */
+  -webkit-box-shadow: 2px 7px 7px -2px rgba(0, 0, 0, 0.35); /* Para navegadores viejos */
   box-shadow: 2px 7px 7px -2px rgba(0, 0, 0, 0.35);
 }
 @media (min-width: 768px) {
@@ -180,15 +185,11 @@ i.menu-button {
   .li-header a {
     color: #000000;
     font-weight: 500;
-    /* padding-left: 1.51rem; */
   }
   .li-header a:hover {
     color: #c22b2b;
   }
 }
-/* .burger-action {
-  display: flex;
-} */
 
 /* Contenido principal */
 .main-content-header {
@@ -210,6 +211,11 @@ i.menu-button {
   /* Puesto para que se puedan agrupar al costado en escritorio */
   .main-text {
     flex: 0 0 calc(36% - 0.5rem);
+  }
+}
+@media (min-width: 1350px) {
+  .main-content-header {
+    justify-content: space-evenly;
   }
 }
 .main-content-header p {
@@ -245,6 +251,11 @@ i.menu-button {
     grid-template-columns: repeat(3, 35rem);
   }
 }
+@media (min-width: 1350px) {
+  .publicity-marketing .grid-boxes-container {
+    column-gap: 10rem;
+  }
+}
 .publicity-marketing .grid-boxes-container .grid-box {
   background-color: #fff;
   margin: 2rem 1.5rem;
@@ -265,18 +276,23 @@ i.menu-button {
 .security-side {
   margin: 5rem auto 0 auto;
 }
-/* Flex para pantallas de más de 920px */
 @media (min-width: 920px) {
   .security-container {
     display: flex;
     flex: 0 0 calc(100% - 3rem);
     flex-wrap: nowrap;
-    align-items: center;
+    /* align-items: center; */
+    justify-content: center;
   }
   .main-security-text {
     display: flex;
     flex-wrap: wrap;
     padding-left: 5rem;
+  }
+}
+@media (min-width: 1020px) {
+  .main-security-text {
+    max-width: 66.1rem;
   }
 }
 .security-side h2 {
@@ -292,6 +308,7 @@ i.menu-button {
 }
 .security-side .main-security-text img {
   width: 80%;
+  max-width: 50rem;
 }
 @media (min-width: 920px) {
   .security-side .main-security-text img {
@@ -306,13 +323,14 @@ i.menu-button {
 .security-info-ul {
   display: flex;
   flex-direction: column;
-  margin-top: 2.5rem;
-  padding: 0 2rem;
+  justify-content: center;
+  /* margin-top: 2.5rem;
+  padding: 0 2rem; */
 }
 /* Que se vaya centrando el ul, no se me ocurre otra manera */
 @media (min-width: 460px) {
   .security-info-ul {
-    padding-left: 5rem;
+    padding-left: 3rem;
   }
 }
 @media (min-width: 650px) {
@@ -425,6 +443,17 @@ i.menu-button {
   .step-bar {
     width: 70%;
     left: 15rem;
+  }
+}
+@media (min-width: 1350px) {
+  .step-bar {
+    width: 65%;
+    left: 21.5rem;
+  }
+}
+@media (min-width: 1710px) {
+  .step-bar {
+    left: 26rem;
   }
 }
 .step-container {
