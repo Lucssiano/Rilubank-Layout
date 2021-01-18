@@ -253,7 +253,12 @@ i.menu-button {
 }
 @media (min-width: 1350px) {
   .publicity-marketing .grid-boxes-container {
-    column-gap: 10rem;
+    column-gap: 4rem;
+  }
+}
+@media (min-width: 1620px) {
+  .publicity-marketing .grid-boxes-container {
+    column-gap: 7rem;
   }
 }
 .publicity-marketing .grid-boxes-container .grid-box {
