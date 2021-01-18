@@ -83,6 +83,7 @@ i {
   background-attachment: fixed;
   position: fixed;
   box-shadow: 2px 7px 7px -2px rgba(0, 0, 0, 0.35);
+  z-index: 999;
 }
 .header-container {
   display: flex;
@@ -284,6 +285,11 @@ i.menu-button {
   margin-bottom: 2rem;
   padding: 0 2rem;
 }
+@media (min-width: 1020px) {
+  .security-side h2 {
+    margin-bottom: 4rem;
+  }
+}
 .security-side .main-security-text img {
   width: 80%;
 }
@@ -343,11 +349,26 @@ i.menu-button {
   font-size: 3rem;
   letter-spacing: 0.1rem;
   padding: 0 2rem;
-  margin: 2rem 0;
+  margin: 3rem 0 2rem 0;
+}
+@media (min-width: 920px) {
+  .join-rilubank h2 {
+    margin-top: 4.5rem;
+  }
 }
 .join-rilubank .app-icons {
   text-align: center;
   margin-top: 2rem;
+}
+@media (min-width: 920px) {
+  .join-rilubank .app-icons {
+    margin-bottom: 3rem;
+  }
+}
+/* Ver si se le puede hacer una animación para que se expanda y se achique continuamente */
+.arrow {
+  height: 4rem;
+  padding: 0 1.8rem;
 }
 .join-rilubank .app-icons .playstore-img {
   height: 4rem;
@@ -357,11 +378,7 @@ i.menu-button {
   height: 4.5rem;
 }
 .join-rilubank-steps {
-  /* display: flex;
-  flex-wrap: wrap; */
-  /* flex: 0 0 calc(50% - 2rem); */
   position: relative;
-  /* margin: 1rem 0; */
 }
 @media (min-width: 515px) {
   .join-rilubank-steps {
@@ -373,36 +390,73 @@ i.menu-button {
     margin-left: 5rem;
   }
 }
+@media (min-width: 920px) {
+  .join-rilubank-steps {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+@media (min-width: 1020px) {
+  .join-rilubank-steps {
+    justify-content: space-evenly;
+  }
+}
 .step-bar {
   position: absolute;
-  background-color: #c22b2b;
-  height: 48rem;
-  width: .4rem;
+  background-color: #000;
+  height: 82%;
+  width: 0.4rem;
   top: 1rem;
   left: 6.5rem;
   z-index: -1;
   /* No se me ocurre que puedo poner para que sea animado */
+  /* Capaz un scroll reveal */
   /* transition: transform 4s;
   transform: translateY(35rem); */
+}
+@media (min-width: 920px) {
+  .step-bar {
+    height: 0.4rem;
+    width: 82%;
+    top: 6rem;
+  }
+}
+@media (min-width: 1020px) {
+  .step-bar {
+    width: 70%;
+    left: 15rem;
+  }
 }
 .step-container {
   display: flex;
   flex-wrap: nowrap;
   margin: 3.5rem 2rem 4rem 2rem;
 }
+@media (min-width: 920px) {
+  .step-container {
+    display: block;
+    margin: 0;
+    width: 15rem;
+  }
+}
 .step-container .step-container-img {
   /* Ver si se puede ajustar mejor sin el min y el max */
-  /* min-width: 12.6rem;
-  min-height: 12.6rem;
-  max-width: 12.6rem;
-  max-height: 12.6rem; */
+  display: block;
   min-width: 9.5rem;
   min-height: 9.5rem;
   max-width: 9.5rem;
   max-height: 9.5rem;
   border-radius: 50%;
-  border: 2px solid #ccc;
-  background-color: #fff;
+  border: 1px solid #000;
+  background-image: linear-gradient(to bottom, #dfe9f3 0%, white 100%);
+}
+@media (min-width: 920px) {
+  .step-container .step-container-img {
+    min-width: 11.6rem;
+    min-height: 11.6rem;
+    max-width: 11.6rem;
+    max-height: 11.6rem;
+  }
 }
 .step-container-img img {
   padding: 2rem;
@@ -410,7 +464,14 @@ i.menu-button {
 .step-container li {
   text-align: left;
   margin: auto 0;
-  padding: 0 1.5rem;
+  padding: 0 0 0 1.5rem;
+  line-height: 2rem;
+  font-weight: 500;
+}
+@media (min-width: 920px) {
+  .step-container li {
+    padding: 1.5rem 0;
+  }
 }
 
 /* Flecha para subir al header */
@@ -439,5 +500,4 @@ i.menu-button {
   }
 } */
 
-/* Hacer la parte responsive de "¿Cómo sumarte a Rilubank?" (a los 920px cambiar la forma para el costado) */
-/* Ver q capaz conviene hacer más margenes o padding en algunos lados */
+/* Ver de agregar un span para hacer como una lista de pasos para sumarse al banco */
