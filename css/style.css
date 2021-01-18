@@ -1,13 +1,5 @@
-html {
-  box-sizing: border-box;
-  font-size: 62.5%; /* Reset para REMS -> 62.5% = 10px de 16px , 1rem = 10px */
-  scroll-behavior: smooth;
-}
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
+/* ############################## PRINCIPALES ################################## */
+
 body {
   font-family: "Poppins", sans-serif;
   font-size: 1.6rem;
@@ -15,21 +7,17 @@ body {
   background-attachment: fixed;
   text-align: center;
 }
-/* Si se hace repetitivo los colores voy a declarar esas variables */
-/* :root {
+:root {
   --primary-color: #c22b2b;
   --full-black: #000;
   --full-white: #fff;
   --border-color: #ccc;
-} */
-
-/* Globales */
-h1,
-h2,
-h3,
-h4 {
-  margin: 0;
 }
+
+/* ############################################################################# */
+
+/* ############################## GLOBALES ################################## */
+
 /* Por ahora creo que estan al dope los h separados */
 h1 {
   font-size: 2.8rem;
@@ -37,13 +25,11 @@ h1 {
 h2 {
   font-size: 2.4rem;
 }
+/* Por ahora creo que estan al dope los h separados */
 img {
-  max-width: 100%;
   max-height: 31rem;
 }
 a {
-  text-decoration: none;
-  font-family: "Poppins", sans-serif;
   font-size: 1.8rem;
 }
 .general-container {
@@ -58,15 +44,14 @@ ul {
   margin: 0;
   padding: 0;
 }
-p {
-  font-size: 1.6rem;
-  margin: 0;
-}
 i {
-  color: #c22b2b;
+  color: var(--primary-color);
 }
 
-/* Utilidades */
+/* ############################################################################# */
+
+/* ############################## UTILIDADES ################################## */
+
 .bolder {
   font-weight: 700;
 }
@@ -74,7 +59,10 @@ i {
   text-transform: uppercase;
 }
 
-/* Header */
+/* ############################################################################# */
+
+/* ############################## HEADER ################################## */
+
 /* Varias maneras de hacer el header , ver cual es la más conveniente*/
 .main-header {
   padding: 2rem 0 2rem 2rem;
@@ -128,7 +116,10 @@ i.menu-button {
   }
 }
 
-/* Navegación */
+/* ############################################################################# */
+
+/* ############################## NAVEGACIÓN ################################## */
+
 .ul-list {
   /* display: none; */
   background-image: linear-gradient(to bottom, #dfe9f3 0%, white 100%);
@@ -158,7 +149,7 @@ i.menu-button {
 }
 .li-header {
   width: 100%;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid var(--border-color);
   padding: 2rem;
 }
 .li-header:nth-child(5) {
@@ -176,22 +167,25 @@ i.menu-button {
 }
 .li-header a {
   /* display: block;  */ /* Para que se expanda el enlace , porque no se como impedir que toque en la caja contenedora de las listas con js */
-  color: #c22b2b;
+  color: var(--primary-color);
 }
 .li-header a:hover {
-  color: #000000;
+  color: var(--full-black);
 }
 @media (min-width: 768px) {
   .li-header a {
-    color: #000000;
+    color: var(--full-black);
     font-weight: 500;
   }
   .li-header a:hover {
-    color: #c22b2b;
+    color: var(--primary-color);
   }
 }
 
-/* Contenido principal */
+/* ############################################################################# */
+
+/* ############################## CONTENIDO PRINCIPAL ################################## */
+
 .main-content-header {
   display: flex;
   flex-flow: column wrap;
@@ -234,7 +228,10 @@ i.menu-button {
   padding: 0 1rem;
 }
 
-/* "Publicidad y marketing" Cajas descriptivas  */
+/* ############################################################################# */
+
+/* ############################## PUBLICIDAD Y MARKETING / CAJAS DESCRIPTIVAS ################################## */
+
 .publicity-marketing .grid-boxes-container {
   display: block;
 }
@@ -262,7 +259,7 @@ i.menu-button {
   }
 }
 .publicity-marketing .grid-boxes-container .grid-box {
-  background-color: #fff;
+  background-color: var(--full-white);
   margin: 2rem 1.5rem;
   /* box-shadow: 2px 7px 7px -2px rgba(0, 0, 0, 0.35); */ /* Sombra más tranki */
   box-shadow: 3px 7px 20px 0px rgba(0, 0, 0, 0.75);
@@ -277,7 +274,10 @@ i.menu-button {
   margin: 1rem 0 0 0;
 }
 
-/* Seguridad del banco */
+/* ############################################################################# */
+
+/* ############################## SEGURIDAD DEL BANCO ################################## */
+
 .security-side {
   margin: 5rem auto 0 auto;
 }
@@ -367,7 +367,10 @@ i.menu-button {
   padding: 1rem 0 0 2rem;
 }
 
-/* Cómo sumarte a Rilubank */
+/* ############################################################################# */
+
+/* ############################## COMO SUMARTE A RILUBANK ################################## */
+
 .join-rilubank h2 {
   font-size: 3rem;
   letter-spacing: 0.1rem;
@@ -426,7 +429,7 @@ i.menu-button {
 }
 .step-bar {
   position: absolute;
-  background-color: #000;
+  background-color: var(--full-black);
   height: 82%;
   width: 0.4rem;
   top: 1rem;
@@ -481,7 +484,7 @@ i.menu-button {
   max-width: 9.5rem;
   max-height: 9.5rem;
   border-radius: 50%;
-  border: 1px solid #000;
+  border: 1px solid var(--full-black);
   background-image: linear-gradient(to bottom, #dfe9f3 0%, white 100%);
 }
 @media (min-width: 920px) {
@@ -507,6 +510,16 @@ i.menu-button {
     padding: 1.5rem 0;
   }
 }
+
+/* ############################################################################# */
+
+/* ############################################################################# */
+
+/* ############################################################################# */
+
+/* ############################################################################# */
+
+/* ############################################################################# */
 
 /* Flecha para subir al header */
 /* Fijarse como hacer que aparezca despues que no se vea el header  */
@@ -535,3 +548,4 @@ i.menu-button {
 } */
 
 /* Ver de agregar un span para hacer como una lista de pasos para sumarse al banco */
+/* Capaz que los h de la pág están medio mal y deberia poner párrafos u otras cosas */
