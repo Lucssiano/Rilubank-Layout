@@ -592,7 +592,7 @@ i.menu-button {
   border-radius: 50%;
   height: 1rem;
   width: 1rem;
-  margin-right: 1.2rem;
+  margin: 0 1.2rem 2rem 0;
   background-color: var(--full-white);
   border: 1px solid var(--full-black);
 }
