@@ -279,17 +279,18 @@ i.menu-button {
     display: flex;
     flex-wrap: wrap;
     padding-left: 5rem;
+    justify-content: center;
   }
 }
 @media (min-width: 1020px) {
   .main-security-text {
-    max-width: 66.1rem;
+    max-width: 60rem;
   }
 }
 .security-side h2 {
   margin-bottom: 2rem;
 }
-@media (min-width: 1020px) {
+@media (min-width: 920px) {
   .security-side h2 {
     margin-bottom: 4rem;
   }
@@ -297,11 +298,6 @@ i.menu-button {
 .security-side .main-security-text img {
   width: 80%;
   max-width: 50rem;
-}
-@media (min-width: 920px) {
-  .security-side .main-security-text img {
-    margin-left: 5rem;
-  }
 }
 .security-side .main-security-text p {
   padding: 1.5rem 2rem;
@@ -393,6 +389,7 @@ i.menu-button {
 }
 .join-rilubank-steps {
   position: relative;
+  justify-content: center;
 }
 @media (min-width: 515px) {
   .join-rilubank-steps {
@@ -413,6 +410,11 @@ i.menu-button {
 @media (min-width: 1020px) {
   .join-rilubank-steps {
     justify-content: space-evenly;
+  }
+}
+@media (min-width: 1610px) {
+  .join-rilubank-steps {
+    margin: 0 20rem;
   }
 }
 .step-bar {
@@ -519,8 +521,12 @@ i.menu-button {
 @media (min-width: 920px) {
   .users-opinions .users-opinion-boxes {
     display: flex;
-    justify-content: center;
-    margin: 8.5rem 12rem 2rem 12rem;
+    /* justify-content: center;
+    align-items: center; */
+    /* margin: 8.5rem 12rem 2rem 12rem; */
+    margin: 8.5rem auto 0 auto;
+    max-width: 103.6rem;
+    max-height: 30.1rem;
   }
   .users-opinion-boxes .user-opinion-box {
     display: block;
@@ -528,12 +534,7 @@ i.menu-button {
 }
 @media (min-width: 1500px) {
   .users-opinions .users-opinion-boxes {
-    margin: 8.5rem 20rem 2rem 20rem;
-  }
-}
-@media (min-width: 1650px) {
-  .users-opinions .users-opinion-boxes {
-    margin: 8.5rem 30rem 2rem 30rem;
+    max-width: 125rem;
   }
 }
 .users-opinion-boxes .user-opinion-box.active-card {
@@ -603,7 +604,74 @@ i.menu-button {
 /* ############################################################################# */
 
 /* ############################## PREGUNTAS FRECUENTES ################################## */
-
+.frequently-questions-container {
+  margin-bottom: 3rem;
+}
+@media (min-width: 1040px) {
+  .frequently-questions-container {
+    max-width: 103.6rem;
+  }
+}
+@media (min-width: 1500px) {
+  .frequently-questions-container {
+    max-width: 125rem;
+  }
+}
+.frequently-questions-container h2 {
+  margin: 2rem 0;
+}
+@media (min-width: 920px) {
+  .frequently-questions-container h2 {
+    margin: 5rem 0 2.5rem 0;
+  }
+}
+.frequently-questions-boxes {
+  display: flex;
+  flex-direction: column;
+}
+.frequently-questions-boxes .frequently-question-box {
+  background-image: var(--full-white);
+  padding: 2rem;
+  box-shadow: 3px 7px 20px 0px rgba(0, 0, 0, 0.75);
+  margin: 1rem;
+  text-align: left;
+  cursor: pointer;
+}
+.frequently-question-box .frequently-question {
+  display: flex;
+  justify-content: space-between;
+}
+.frequently-question p.question-title {
+  padding-right: 1.5rem;
+  line-height: 1.5;
+  font-weight: 500;
+  font-size: 1.8rem;
+}
+.frequently-question i {
+  font-size: 2.2rem;
+  width: 2.2rem;
+  height: 2.2rem;
+  padding-top: 0.3rem;
+  cursor: pointer;
+}
+/* Sacar simbolo */
+.frequently-question i.fa-chevron-down,
+.frequently-question i.fa-chevron-up {
+  display: none;
+}
+/* Aparecer simbolo */
+.frequently-question i.icon-change,
+.frequently-question-box p.answer-text.display-block {
+  display: flex;
+}
+.frequently-question-box p.answer-text {
+  display: none;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--little-grey);
+  line-height: 1.8;
+  opacity: 0.7;
+}
 /* ############################################################################# */
 
 /* ############################################################################# */
