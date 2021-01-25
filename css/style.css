@@ -45,6 +45,7 @@ ul {
 }
 i {
   color: var(--primary-color);
+  font-size: 3rem;
 }
 /* ############################################################################# */
 
@@ -65,8 +66,8 @@ i {
   background-image: var(--linear-gradient);
   background-attachment: fixed;
   position: fixed;
-  box-shadow: 2px 7px 7px -2px rgba(0, 0, 0, 0.35);
   z-index: 999;
+  transition: 1s;
 }
 .header-container {
   display: flex;
@@ -74,9 +75,6 @@ i {
 @media (min-width: 768px) {
   .main-header {
     max-width: 135rem;
-    /* Por si no uso el header sticky */
-    /* position: static;  */
-    /* box-shadow: none; */
   }
   .header-container {
     align-items: center;
@@ -104,6 +102,7 @@ i.menu-button {
   position: absolute;
   top: 2.1rem;
   right: 2.5rem;
+  transition: 2s;
 }
 @media (min-width: 768px) {
   .hamburguer-container {
@@ -181,6 +180,7 @@ i.menu-button {
   display: flex;
   flex-flow: column wrap;
   padding-top: 10rem;
+  /* margin-bottom: 15rem; */
 }
 .main-text p {
   padding: 2rem;
@@ -222,6 +222,7 @@ i.menu-button {
 /* ############################## PUBLICIDAD Y MARKETING / CAJAS DESCRIPTIVAS ################################## */
 .publicity-marketing .grid-boxes-container {
   display: block;
+  /* padding-bottom: 15rem; */
 }
 @media (min-width: 1020px) {
   .publicity-marketing .grid-boxes-container {
@@ -265,6 +266,7 @@ i.menu-button {
 
 /* ############################## SEGURIDAD DEL BANCO ################################## */
 .security-side {
+  /* margin: 5rem auto 10rem auto; */
   margin: 5rem auto 0 auto;
 }
 @media (min-width: 920px) {
@@ -310,6 +312,7 @@ i.menu-button {
   justify-content: center;
   /* margin-top: 2.5rem;
   padding: 0 2rem; */
+  padding-top: 2rem;
 }
 /* Que se vaya centrando el ul, no se me ocurre otra manera */
 @media (min-width: 460px) {
@@ -332,9 +335,6 @@ i.menu-button {
   /* align-items: space-evenly; */
   padding: 0 2rem 2rem 2rem;
 }
-.security-info-li i.security-icon {
-  font-size: 3rem;
-}
 .list-text {
   text-align: left;
 }
@@ -347,21 +347,56 @@ i.menu-button {
 }
 /* ############################################################################# */
 
+/* ############################## "PUBLICIDAD" DEL BANCO , "TRANSFERENCIAS" ################################## */
+.ad-div {
+  display: flex;
+  flex-direction: column;
+  padding: 4rem 2rem 2rem 2rem;
+}
+@media (min-width: 920px) {
+  .ad-div {
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.ad-div .money-image-container {
+  padding: 2rem 0;
+}
+@media (min-width: 920px) {
+  .ad-div .money-image-container img{
+    max-height: 40rem;
+    height: 40rem;
+  }
+}
+.ad-div h2 {
+  line-height: 1.5;
+}
+@media (min-width: 920px) {
+  .ad-div h2 {
+    max-width: 40rem; 
+    text-align: left;
+  }
+}
+/* ############################################################################# */
+
 /* ############################## COMO SUMARTE A RILUBANK ################################## */
+/* .join-rilubank {
+  margin-bottom: 12rem;
+} */
 .join-rilubank h2 {
-  margin: 3rem 0 2rem 0;
+  margin: 6rem 0 2rem 0;
 }
 @media (min-width: 920px) {
   .join-rilubank h2 {
     margin-top: 4.5rem;
   }
 }
-.join-rilubank .app-icons {
-  text-align: center;
+.app-icons {
   margin-top: 2rem;
 }
 @media (min-width: 920px) {
-  .join-rilubank .app-icons {
+  .app-icons {
     margin-bottom: 1rem;
   }
 }
@@ -370,11 +405,11 @@ i.menu-button {
   height: 4rem;
   padding: 0 1.8rem;
 }
-.join-rilubank .app-icons .playstore-img {
+.app-icons .playstore-img {
   height: 4rem;
   padding-right: 2rem;
 }
-.join-rilubank .app-icons .apple-img {
+.app-icons .apple-img {
   height: 4.5rem;
 }
 .join-rilubank p {
@@ -505,6 +540,7 @@ i.menu-button {
 /* ############################## OPINIONES DE LOS USUARIOS ################################## */
 .users-opinions {
   margin-top: 3rem;
+  /* margin-bottom: 10rem; */
 }
 .users-opinions .users-opinion-boxes {
   margin: 7.5rem 2.5rem 2rem 2.5rem;
@@ -605,7 +641,8 @@ i.menu-button {
 
 /* ############################## PREGUNTAS FRECUENTES ################################## */
 .frequently-questions-container {
-  margin-bottom: 3rem;
+  /* margin-bottom: 15rem; */
+  margin-bottom: 7rem;
 }
 @media (min-width: 1040px) {
   .frequently-questions-container {
@@ -674,6 +711,82 @@ i.menu-button {
 }
 /* ############################################################################# */
 
+/* ############################## FOOTER ################################## */
+footer.main-footer {
+  /* background-color: #f3f3f3; */
+  background-color: #ededed;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+@media (min-width: 768px) {
+  footer.main-footer {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+@media (min-width: 790px) {
+  footer.main-footer {
+    justify-content: space-evenly;
+  }
+}
+.logo-container {
+  padding-top: 4rem;
+}
+@media (min-width: 768px) {
+  /* Div que se agregó para agrupar el contenido principal */
+  .icons-section {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.social-media-icons {
+  padding-top: 1.5rem;
+}
+.social-media-icons a {
+  padding-right: 1.5rem;
+}
+.social-media-icons i {
+  color: #888;
+}
+@media (min-width: 768px) {
+  .social-media-icons i:hover {
+    color: var(--primary-color);
+  }
+}
+.main-footer .app-icons {
+  margin-top: 4rem;
+}
+.footer-nav h3 {
+  padding: 4rem 0 0.5rem 0;
+}
+.footer-nav li.li-footer {
+  padding-top: 2rem;
+}
+.footer-nav .li-footer a {
+  color: rgba(0, 0, 0, 0.65);
+}
+@media (min-width: 786px) {
+  .footer-nav .li-footer a:hover {
+    color: var(--primary-color);
+  }
+}
+.copyright-text {
+  padding-top: 6rem;
+  font-size: 1.2rem;
+}
+.copyright-text .template {
+  padding-top: 6rem;
+}
+@media (min-width: 768px) {
+  .copyright-text {
+    margin: auto 0;
+  }
+  .copyright-text .template {
+    padding-top: 2rem;
+  }
+}
 /* ############################################################################# */
 
 /* ############################################################################# */
