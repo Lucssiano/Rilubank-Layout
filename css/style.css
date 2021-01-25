@@ -113,7 +113,6 @@ i.menu-button {
 
 /* ############################## NAVEGACIÓN ################################## */
 .ul-list {
-  /* display: none; */
   background-image: var(--linear-gradient);
   background-attachment: fixed;
   position: absolute;
@@ -792,7 +791,6 @@ footer.main-footer {
 /* ############################################################################# */
 
 /* Flecha para subir al header */
-/* Fijarse como hacer que aparezca despues que no se vea el header  */
 /* .arrow-container {
   display: none;
 }
