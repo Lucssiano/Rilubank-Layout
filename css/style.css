@@ -102,7 +102,7 @@ i.menu-button {
   position: absolute;
   top: 2.1rem;
   right: 2.5rem;
-  transition: 2s;
+  transition: all 0.5s linear;
 }
 @media (min-width: 768px) {
   .hamburguer-container {
@@ -573,7 +573,7 @@ i.menu-button {
     max-width: 125rem;
   }
 }
-.users-opinion-boxes .user-opinion-box.active-card {
+.user-opinion-box.active-card {
   display: block;
 }
 .user-opinion-box .user-image-container {
@@ -700,7 +700,7 @@ i.menu-button {
 /* Aparecer simbolo */
 .frequently-question i.icon-change,
 .frequently-question-box p.answer-text.display-block {
-  display: flex;
+  display: block;
 }
 .frequently-question-box p.answer-text {
   display: none;

@@ -49,27 +49,27 @@ window.onscroll = function () {
   }
 };
 
-// Abrir el menú de navegación en mobile
-burger.addEventListener("click", () => {
+// Función para manejar las clases del header en mobile
+function mobileHeader() {
   nav.classList.toggle("active");
   // Clase para que el boton burguer sea una x
-  burger.classList.toggle('bx-x');
-});
+  burger.classList.toggle("bx-x");
+  if (burger.classList.contains("bx-x")) {
+    burger.style.color = "var(--full-black)";
+  } else {
+    burger.style.color = "var(--primary-color)";
+  }
+}
 
-// Si se presiona la tecla ESCAPE se cierra el menú de navegación (creo que está al dope pq las compu son de más de 768px)
-// function escPushed() {
-// teclaEsc = event.keyCode;
-// if (teclaEsc == 27) {
-// nav.classList.remove("active");
-// }
-// }
-// Inmediatamente que se presione la tecla ESCAPE se cierra el menú de navegación
-// window.onkeydown = escPushed;
+// Abrir el menú de navegación en mobile
+burger.addEventListener("click", () => {
+  mobileHeader();
+});
 
 // Si se presiona en alguna parte que no sea el header se cierra el menú de navegación en mobile
 window.addEventListener("click", (e) => {
   if (nav.classList.contains("active") && e.target !== header && e.target !== headerContainer && e.target !== burger) {
-    nav.classList.remove("active");
+    mobileHeader();
   }
 });
 /* ######################### /*
@@ -147,6 +147,16 @@ for (let p = 0; p < upQuestionArrow.length; p++) {
 //   downQuestionArrow[p].classList.remove("icon-change");
 //   answerText[p].classList.remove("display-block");
 // };
+
+// Si se presiona la tecla ESCAPE se cierra el menú de navegación (creo que está al dope pq las compu son de más de 768px)
+// function escPushed() {
+// teclaEsc = event.keyCode;
+// if (teclaEsc == 27) {
+// nav.classList.remove("active");
+// }
+// }
+// Inmediatamente que se presione la tecla ESCAPE se cierra el menú de navegación
+// window.onkeydown = escPushed;
 
 /* ### Scroll reveals ### */
 // window.sr = ScrollReveal();
