@@ -62,28 +62,20 @@ i {
 /* Varias maneras de hacer el header , ver cual es la más conveniente*/
 .main-header {
   padding: 2rem 0 2rem 2rem;
-  width: 100%;
   background-image: var(--linear-gradient);
   background-attachment: fixed;
   position: fixed;
   z-index: 999;
   transition: 1s;
+  max-width: 384rem;
 }
 .header-container {
   display: flex;
 }
 @media (min-width: 768px) {
-  .main-header {
-    max-width: 135rem;
-  }
   .header-container {
     align-items: center;
     justify-content: space-around;
-  }
-}
-@media (min-width: 1350px) {
-  .main-header {
-    max-width: 192rem;
   }
 }
 .logo-png {
@@ -701,6 +693,8 @@ i.menu-button {
 .frequently-question i.icon-change,
 .frequently-question-box p.answer-text.display-block {
   display: block;
+  /* opacity: 0.7;
+  max-height: 40rem; */
 }
 .frequently-question-box p.answer-text {
   display: none;
@@ -708,6 +702,8 @@ i.menu-button {
   padding-top: 1rem;
   border-top: 1px solid var(--little-grey);
   line-height: 1.8;
+  /* max-height: 0;
+  opacity: 0; */
   opacity: 0.7;
 }
 /* ############################################################################# */
@@ -720,6 +716,7 @@ footer.main-footer {
   display: flex;
   flex-direction: column;
   padding: 2rem;
+  max-width: 384rem;
 }
 @media (min-width: 768px) {
   footer.main-footer {
